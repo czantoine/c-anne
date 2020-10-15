@@ -41,7 +41,7 @@ If this is your first time making a PR or aren't sure of the standard practice o
 - [Julie Neige](https://github.com/Juu-Snw)
 - [Firzenax](https://github.com/Firzenax)
 #### Tech
-- [pouletdj](https://github.com/EverAged)
-- [Stephen](https://github.com/pouletdj) 
+- [pouletdj](https://github.com/pouletdj)
+- [JerryStyve](https://github.com/JerryStyve) 
 
  
