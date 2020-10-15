@@ -19,7 +19,7 @@ If you have a great idea to improve the web project, please [search our feature 
 While you're there vote on other feature requests to let the network/dev/elec/ know what is most important to you.
 
 ### [Pull Requests](https://github.com/czantoine/c-anne/pulls)
-If you'd like to make your own changes, make sure you follow the pull request template, and ensure your PR is made against the 'network' / 'dev' / 'elec' branch.
+If you'd like to make your own changes, make sure you follow the pull request template, and ensure your PR is made against the 'network' / 'dev' / 'tech' branch.
 
 If this is your first time making a PR or aren't sure of the standard practice of making a PR, here are some articles to get you started.
  - [GitHub Pull Request Tutorial](https://www.thinkful.com/learn/github-pull-request-tutorial/)
