@@ -1,3 +1,4 @@
+import 'package:c_app/sign_up_choice.dart';
 import 'package:c_app/sign_up_patient.dart';
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
@@ -114,7 +115,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
         new InkWell(
             onTap: () {
               Navigator.push(context, new MaterialPageRoute(
-                  builder: (context) => MySignUpPage()
+                  builder: (context) => SignUpChoicePage()
               ));
             },
             child:

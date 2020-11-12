@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'c-Anne demo',
       debugShowCheckedModeBanner: false,
-      home: MySignUpPage(),
+      home: MyLoginPage(),
     );
   }
 }
