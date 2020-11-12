@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil.dart';
 import 'package:c_app/login.dart';
+import 'package:c_app/sign_up_patient.dart';
 
 
 void main() => runApp(MyApp());
@@ -10,9 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login UI',
+      title: 'c-Anne demo',
       debugShowCheckedModeBanner: false,
-      home: MyLoginPage(),
+      home: MySignUpPage(),
     );
   }
 }
