@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="012deb42-f440-4ee9-a6bd-96422e803015" name="Default Changelist" comment="" />
+    <list default="true" id="012deb42-f440-4ee9-a6bd-96422e803015" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/c-anne.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/accueil.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/accueil_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/menu_options_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/option_model.dart" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +31,6 @@
   <component name="ProjectId" id="1kBtOs1oQCX2B9UkCKDCMT6QiKu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -40,6 +50,10 @@
       <updated>1605185783147</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="blabbla" />
+    <option name="LAST_COMMIT_MESSAGE" value="blabbla" />
   </component>
   <component name="WindowStateProjectService">
     <state x="624" y="178" key="AndroidProcessChooserDialog" timestamp="1605186788685">
