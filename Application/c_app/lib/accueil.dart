@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
 import 'package:c_app/menu_options_screen.dart';
 
-class Acceuil_Screen extends StatefulWidget {
+class Accueil_Screen extends StatefulWidget {
   @override
-  _Acceuil_Screen createState() => _Acceuil_Screen();
+  _Accueil_Screen createState() => _Accueil_Screen();
 }
 
-class _Acceuil_Screen extends State<Acceuil_Screen> {
+class _Accueil_Screen extends State<Accueil_Screen> {
   int _selectedOption = 0;
 
   @override
@@ -23,7 +23,7 @@ class _Acceuil_Screen extends State<Acceuil_Screen> {
             Icons.list,
           ),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Acceuil_Screen()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Accueil_Screen()));
           },
         ),
         actions: <Widget>[
