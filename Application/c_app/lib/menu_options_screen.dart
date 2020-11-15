@@ -15,7 +15,7 @@ class _MenuOptionsScreenState extends State<MenuOptionsScreen> {
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.purple,
         title: Text('Menu Options'),
         leading: FlatButton(
           textColor: Colors.white,

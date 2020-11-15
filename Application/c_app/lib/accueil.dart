@@ -8,77 +8,58 @@ class Accueil_Screen extends StatefulWidget {
 }
 
 class _Accueil_Screen extends State<Accueil_Screen> {
-  int _selectedOption = 0;
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 1: Business',
+      style: optionStyle,
+    ),
+    Text(
+      'Index 2: School',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
-        backgroundColor: Colors.red,
-        title: Text('Accueil'),
-        leading: FlatButton(
-          textColor: Colors.white,
-          child: Icon(
-            Icons.list,
-          ),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Accueil_Screen()));
-          },
-        ),
-        actions: <Widget>[
-          FlatButton(
-            textColor: Colors.white,
-            child: Icon(
-                Icons.settings
-            ),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MenuOptionsScreen()));
-            },
-          )
-        ],
+        title: const Text('Accueil'),
+        backgroundColor: Colors.purple,
       ),
-      body: ListView.builder(
-        itemCount: options.length + 2,
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
-            return SizedBox(height: 10.0);
-          } else if (index == options.length + 1) {
-            return SizedBox(height: 100.0);
-          }
-          return Container(
-            alignment: Alignment.bottomCenter,
-            margin: EdgeInsets.all(10.0),
-            width: double.infinity,
-            height: 80.0,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10.0),
-              border: _selectedOption == index - 1
-                  ? Border.all(color: Colors.black26)
-                  : null,
-            ),
-            child: ListTile(
-              leading: options[index - 1].icon,
-              title: Text(
-                options[index - 1].title,
-                style: TextStyle(
-                  color: _selectedOption == index - 1
-                      ? Colors.black
-                      : Colors.grey[600],
-                ),
-
-              ),
-              selected: _selectedOption == index - 1,
-              onTap: () {
-                setState(() {
-                  _selectedOption = index - 1;
-                });
-              },
-            ),
-
-          );
-        },
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            title: Text('Compte'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            title: Text('Option'),
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
       ),
     );
   }
