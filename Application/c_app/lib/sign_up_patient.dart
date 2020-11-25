@@ -14,6 +14,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       body: ListView(
       children: <Widget>[
