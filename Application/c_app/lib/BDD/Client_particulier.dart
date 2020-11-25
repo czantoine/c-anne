@@ -1,8 +1,22 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:c_app/BDD/bdd.dart';
+
+
+Client_particulier client_partFromJson(String str) {
+  final jsonData = json.decode(str);
+  return Client_particulier.fromMap(jsonData);
+}
+
+String client_partToJson(Client_particulier data) {
+  final dyn = data.toMap();
+  return json.encode(dyn);
+}
+
 
 class Client_particulier {
   final int id;
@@ -52,4 +66,5 @@ class Client_particulier {
     "num_urgence2": num_urgence2,
   };
 
-}
+  }
+

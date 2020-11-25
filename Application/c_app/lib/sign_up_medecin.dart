@@ -11,6 +11,14 @@ class MedecinSignUpPage extends StatefulWidget {
 }
 
 class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
+
+  final _formKey = GlobalKey<FormState>();
+  final _formKey2 = GlobalKey<FormState>();
+  final _formKey3 = GlobalKey<FormState>();
+  final _formKey4 = GlobalKey<FormState>();
+  final _formKey5 = GlobalKey<FormState>();
+  final _formKey6 = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,81 +71,144 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey,
+                          child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Email ou numéro de téléphone",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                            validator: (text) {
+                              if (text == null || text.isEmpty) {
+                                return 'Identifiant non saisie';
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey2,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Mot de passe",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'Mot de passe non saisie';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey3,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: "Vérification du mot de passe",
+                                  hintText: "Vérification mot de passe",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'Mot de passe non saisie';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey4,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Nom",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'Nom non saisie';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey5,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Prénom",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'Prénom non saisie';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
                         ),
                         Container(
                           padding: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(color: Colors.grey[100]))),
-                          child: TextField(
+                          child: Form(
+                            key: _formKey6,
+                            child: TextFormField(
                               decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: "Numéro RPPS",
+                                  hintText: "RPPS",
                                   hintStyle:
-                                  TextStyle(color: Colors.grey[400]))),
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'RPPS non saisie';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: 30,
                         ),
                         new InkWell(
                             onTap: () {
-                              Navigator.push(context, new MaterialPageRoute(
-                                  builder: (context) => Accueil_Screen()
-                              ));
+                              if (_formKey.currentState.validate() && _formKey2.currentState.validate() && _formKey3.currentState.validate()
+                                  && _formKey4.currentState.validate() && _formKey5.currentState.validate() && _formKey6.currentState.validate() ) {
+                                Navigator.push(context, new MaterialPageRoute(
+                                    builder: (context) => Accueil_Screen()
+                                ));
+                              }
                             },
                             child:
                             new Container(

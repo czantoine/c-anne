@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
 import 'package:c_app/menu_options_screen.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Accueil_Screen extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class _Accueil_Screen extends State<Accueil_Screen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Accueil'),
-        backgroundColor: Colors.purple,
+        backgroundColor: HexColor('#6C63FF'),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

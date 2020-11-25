@@ -14,6 +14,7 @@ class MyLoginPage extends StatefulWidget {
 class _MyLoginPageState extends State<MyLoginPage> {
 
   final _formKey = GlobalKey<FormState>();
+  final _formKey2 = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -68,38 +69,61 @@ class _MyLoginPageState extends State<MyLoginPage> {
           decoration: BoxDecoration(
               border: Border(
                   bottom: BorderSide(color: Colors.grey[100]))),
-          child: TextField(
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Email ou numéro de téléphone",
-                  hintStyle:
-                  TextStyle(color: Colors.grey[400]))),
+            child : Form(
+              key: _formKey,
+              child: TextFormField(
+                decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(top :14.0),
+                    border: InputBorder.none,
+                    hintText: "Email ou numéro de téléphone",
+                    hintStyle:
+                    TextStyle(color: Colors.grey[400])),
+                validator: (text) {
+                  if (text == null || text.isEmpty) {
+                    return 'Identifiant non saisie';
+                  }
+                  return null;
+                },
+              ),
+            ),
         ),
         Container(
           padding: EdgeInsets.all(8.0),
           decoration: BoxDecoration(
               border: Border(
                   bottom: BorderSide(color: Colors.grey[100]))),
-          child: TextField(
+          child : Form(
+            key: _formKey2,
+          child: TextFormField(
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(top :14.0),
                   border: InputBorder.none,
                   hintText: "Mot de passe",
                   hintStyle:
-                  TextStyle(color: Colors.grey[400]))),
+                  TextStyle(color: Colors.grey[400])),
+              validator: (text1) {
+              if (text1 == null || text1.isEmpty) {
+              return 'Mot de passe non saisie';
+          }
+              return null;
+          },
+          ),
+        ),
         ),
         SizedBox(
           height: 30,
         ),
         new InkWell(
             onTap: () {
-              Navigator.push(context, new MaterialPageRoute(
-                  builder: (context) => Accueil_Screen()
-              ));
+              if (_formKey.currentState.validate() && _formKey2.currentState.validate()) {
+                Navigator.push(context, new MaterialPageRoute(
+                    builder: (context) => Accueil_Screen()
+                ));
+              }
             },
             child:
             new Container(
-              height: 50,
+              height: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   gradient: LinearGradient(
@@ -125,7 +149,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
             },
             child:
             new Container(
-              height: 50,
+              height: 40,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   gradient: LinearGradient(
@@ -141,7 +165,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
               ),
             )),
         SizedBox(
-          height: 40,
+          height: 30,
         ),
         new GestureDetector(
           onTap: () {
