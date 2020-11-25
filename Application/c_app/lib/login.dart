@@ -12,9 +12,13 @@ class MyLoginPage extends StatefulWidget {
 }
 
 class _MyLoginPageState extends State<MyLoginPage> {
+
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.white,
       body: Container(
         child: Column(
@@ -47,7 +51,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
           child: Column(
               children: <Widget>[
           Container(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(0),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -78,6 +82,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                   bottom: BorderSide(color: Colors.grey[100]))),
           child: TextField(
               decoration: InputDecoration(
+                contentPadding: EdgeInsets.only(top :14.0),
                   border: InputBorder.none,
                   hintText: "Mot de passe",
                   hintStyle:
