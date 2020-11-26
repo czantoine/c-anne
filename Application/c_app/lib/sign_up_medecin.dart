@@ -1,9 +1,14 @@
+import 'package:c_app/BDD/Client_medecin.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:c_app/accueil_model.dart';
-import 'package:c_app/menu_options_screen.dart';
 import 'accueil.dart';
 import 'login.dart';
+import 'package:c_app/BDD/bdd.dart';
+
+import'package:c_app/BDD/bdd.dart';
+import 'package:sqflite/sqflite.dart';
+
+
 
 class MedecinSignUpPage extends StatefulWidget {
   @override
@@ -12,12 +17,26 @@ class MedecinSignUpPage extends StatefulWidget {
 
 class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
 
+
+
   final _formKey = GlobalKey<FormState>();
   final _formKey2 = GlobalKey<FormState>();
   final _formKey3 = GlobalKey<FormState>();
   final _formKey4 = GlobalKey<FormState>();
   final _formKey5 = GlobalKey<FormState>();
   final _formKey6 = GlobalKey<FormState>();
+
+
+  /// Verifier les input des textfield
+  TextEditingController logController = new TextEditingController();
+  TextEditingController mdpController = new TextEditingController();
+  TextEditingController mdp2Controller = new TextEditingController();
+  TextEditingController nomController = new TextEditingController();
+  TextEditingController prenomController = new TextEditingController();
+  TextEditingController rppsController = new TextEditingController();
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -74,6 +93,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey,
                           child: TextFormField(
+                            controller: logController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Email ou numéro de téléphone",
@@ -96,6 +116,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey2,
                             child: TextFormField(
+                              controller: mdpController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Mot de passe",
@@ -118,6 +139,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey3,
                             child: TextFormField(
+                              controller: mdp2Controller,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Vérification mot de passe",
@@ -140,6 +162,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey4,
                             child: TextFormField(
+                              controller: nomController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Nom",
@@ -162,6 +185,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey5,
                             child: TextFormField(
+                              controller: prenomController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "Prénom",
@@ -184,6 +208,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           child: Form(
                             key: _formKey6,
                             child: TextFormField(
+                              controller: rppsController,
                               decoration: InputDecoration(
                                   border: InputBorder.none,
                                   hintText: "RPPS",
@@ -202,13 +227,40 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           height: 30,
                         ),
                         new InkWell(
-                            onTap: () {
+                            onTap: () async {
                               if (_formKey.currentState.validate() && _formKey2.currentState.validate() && _formKey3.currentState.validate()
                                   && _formKey4.currentState.validate() && _formKey5.currentState.validate() && _formKey6.currentState.validate() ) {
+                                if(mdpController.text != mdp2Controller.text) {
+                                  return 'mot de passe différents';
+                                }
+
+                                /*
+                                DBProvider().newClient_med(Client_med(
+                                    log: logController.text,
+                                    mdp: mdpController.text,
+                                    nom: nomController.text,
+                                    prenom: prenomController.text,
+                                    num_rpps: int.parse(rppsController.text)));
+                                */
+                                //dbProvider = DBProvider() as Type;
+
+                                Client_med rnd = Client_med(
+                                    id: 0,
+                                    log: logController.text,
+                                    mdp: mdpController.text,
+                                    nom: nomController.text,
+                                    prenom: prenomController.text,
+                                    num_rpps: int.parse(rppsController.text));
+                                await DBProvider.db.newClient_med(rnd);
+                                setState(() {});
+                                print("client ADD");
+
+
                                 Navigator.push(context, new MaterialPageRoute(
                                     builder: (context) => Accueil_Screen()
                                 ));
                               }
+
                             },
                             child:
                             new Container(

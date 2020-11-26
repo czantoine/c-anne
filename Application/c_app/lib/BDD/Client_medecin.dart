@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 class Client_med {
   final int id;
-  final int mail;
+  final String log;
   final String mdp;
   final String nom;
   final String prenom;
   final int num_rpps;
 
   Client_med(
-      {this.id, this.mail, this.mdp, this.nom, this.prenom, this.num_rpps});
+      {this.id, this.log, this.mdp, this.nom, this.prenom, this.num_rpps});
 
 
   factory Client_med.fromMap(Map<String, dynamic> json) => new Client_med(
-    id: json["id"],
-    mail: json["log"],
+    id: json["ID_client_med"],
+    log: json["log"],
     mdp: json["mdp"],
     nom: json["nom"],
     prenom: json["prenom"],
@@ -22,8 +22,8 @@ class Client_med {
   );
 
   Map<String, dynamic> toMap() => {
-    "id": id,
-    "log": mail,
+    "ID_client_med": id,
+    "log": log,
     "mdp": mdp,
     "nom": nom,
     "prenom": prenom,
