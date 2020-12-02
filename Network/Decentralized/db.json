@@ -1,0 +1,31 @@
+{
+	"transactions":[
+		{
+		"hashage":0,
+		"block":0,
+		"horodatage":0,
+		"hauteur":0,
+		"mineur":0,
+		"nombre_transactions":0,
+		"difficulte":0,
+		"merkle":0,
+    	"statut":0,
+   		"taille":0,
+  		"poid":0,
+ 		"nonce":0,
+    	"version":0
+		}
+	],
+	"block":[
+		{
+		"hashage":0,
+		"block":0,
+		"horodatage":0,
+		"difficulte":0,
+    	"statut":0,
+   		"taille":0,
+   		"poid":0,
+    	"version":0
+		}
+	]
+}
