@@ -1,31 +1,56 @@
 {
 	"transactions":[
 		{
-		"hashage": 0,
-		"block": 0,
-		"horodatage": 0,
-		"hauteur": 0,
-		"mineur": 0,
-		"nombre_transactions": 0,
-		"difficulte": 0,
-		"merkle": 0,
-    	"statut": 0,
-   		"taille": 0,
-  		"poid": 0,
- 		"nonce": 0,
-    	"version": 0
+		"hashage": "BBBBB",
+		"block": 2,
+		"horodatage": "3-dec-2020-09:41",
+		"hauteur": 10,
+		"mineur": 3,
+		"nombre_transactions": 2,
+		"difficulte": 2,
+		"merkle": 9,
+    	"statut": "Non Confirmé",
+   		"taille": 4,
+  		"poid": 12,
+ 		"nonce": 5,
+    	"version": 0.0
+		},
+		{
+		"hashage": "AAAAAA",
+		"block": 1,
+		"horodatage": "3-dec-2020-09:40",
+		"hauteur": 10,
+		"mineur": 2,
+		"nombre_transactions": 1,
+		"difficulte": 1,
+		"merkle": 9,
+    	"statut": "Confirmé",
+   		"taille": 3,
+  		"poid": 11,
+ 		"nonce": 4,
+    	"version": 0.0
 		}
 	],
-	"block":[
+	"blocks":[
 		{
-		"hashage": 0,
-		"block": 0,
-		"horodatage": 0,
-		"difficulte": 0,
-    	"statut": 0,
-   		"taille": 0,
-   		"poid": 0,
-    	"version": 0
+		"hashage": "BBBBB1",
+		"block": 2,
+		"horodatage": "3-dec-2020-09:41",
+		"difficulte": 2,
+    	"statut": "Non Confirmé",
+   		"taille": 4,
+   		"poid": 12,
+    	"version": 0.0
+		},
+		{
+		"hashage": "AAAAA1",
+		"block": 1,
+		"horodatage": "3-dec-2020-09:40",
+		"difficulte": 1,
+    	"statut": "Confirmé",
+   		"taille": 3,
+   		"poid": 11,
+    	"version": 0.0
 		}
 	]
 }
