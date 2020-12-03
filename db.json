@@ -37,6 +37,7 @@
 	"blocks":[
 		{
 		"hashage": "BBBBB1",
+		"hashage_w": "<a href=\"BBBBB1.html\">BBBBB1</a>",
 		"block": 2,
 		"horodatage": "3-dec-2020-09:41",
 		"difficulte": 2,
@@ -49,6 +50,7 @@
 		},
 		{
 		"hashage": "AAAAA1",
+		"hashage_w": "<a href=\"AAAAA1.html\">AAAAA1</a>",
 		"block": 1,
 		"horodatage": "3-dec-2020-09:40",
 		"difficulte": 1,
