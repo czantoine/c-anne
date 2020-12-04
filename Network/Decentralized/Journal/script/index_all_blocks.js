@@ -15,7 +15,7 @@ function index_all_blocks(response) {
   var out = "<table>";
   for(i = 0; i < arr.length; i++) {
     out += "<tr><td>" + 
-    arr[i].hashage +
+    arr[i].hauteur_w +
     "</td><td>" +
     arr[i].horodatage +
     "</td><td>" +
