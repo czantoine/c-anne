@@ -30,3 +30,9 @@ done
 list_clean=$(echo "$list" | sed -e 's/\<repo_dechargement\>//g')
 list_clean_up=$(echo $list_clean | tr "/" "\n")
 A=($list_clean_up)
+
+
+#give variable for each dir we have created
+for i in "${!A[@]}"; do
+	printf 'A[%s] = %s\n' "$i" "${A[i]}" >/dev/null
+done
