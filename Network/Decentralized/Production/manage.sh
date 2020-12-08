@@ -2,6 +2,7 @@
 
 #file you want secure
 file=file
+passwordfile:pass
 
 if [ ! -f "ip.txt" ]
 then
@@ -31,8 +32,33 @@ list_clean=$(echo "$list" | sed -e 's/\<repo_dechargement\>//g')
 list_clean_up=$(echo $list_clean | tr "/" "\n")
 A=($list_clean_up)
 
+echo $list_clean_up
 
-#give variable for each dir we have created
 for i in "${!A[@]}"; do
 	printf 'A[%s] = %s\n' "$i" "${A[i]}" >/dev/null
 done
+
+#### Block Header Hashing ####
+
+## Constant info ##
+
+version=0 #4 bytes
+version_1=$(printf '%x\n' $version) #hexadecimal
+version_2=$(echo "0x00000$version_1") #create a loop to add automatc 0
+
+echo $version_2 > version.txt
+
+## Previous block hash ##
+
+openssl aes-256-cbc -a -salt -in version.txt -out version.enc -pass file:"$passwordfile"
+first_prev=$(cat version.enc)
+
+rm version.enc
+rm version.txt
+
+## Time ##
+
+date=$(date +%s) #convert epoch converter / Timestamp
+
+### Block Header Hashing END ####
+
