@@ -60,5 +60,15 @@ rm version.txt
 
 date=$(date +%s) #convert epoch converter / Timestamp
 
-### Block Header Hashing END ####
+## Merkle root ##
 
+full_merkle_root=""
+
+for (( i = 0 ; i < $number ; i++)); do
+	echo "Merkle_root$i" > merkle_root$i
+	openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile"
+	prompt=$(cat merkle_root$i.enc)
+	full_merkle_root="$full_merkle_root $prompt"
+done
+
+### Header Hashing END  ###
