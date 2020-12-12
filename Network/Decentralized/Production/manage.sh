@@ -2,7 +2,7 @@
 
 #file you want secure
 file=file
-passwordfile:pass
+passwordfile=pass
 
 if [ ! -f "ip.txt" ]
 then
@@ -70,5 +70,15 @@ for (( i = 0 ; i < $number ; i++)); do
 	prompt=$(cat merkle_root$i.enc)
 	full_merkle_root="$full_merkle_root $prompt"
 done
+
+## Difficulty bits ##
+
+utime="$( TIMEFORMAT='%lR';time ( printf $full_merkle_root | xxd  -c 256 -ps ) 2>&1 1>/dev/null )" #calcule temps de hash en hexa
+utime0=$(echo "${utime//s}")
+utime1=$(echo "${utime0//m}")
+
+## Nonce ##
+
+nonce=$(openssl rand -hex 12)
 
 ### Header Hashing END  ###
