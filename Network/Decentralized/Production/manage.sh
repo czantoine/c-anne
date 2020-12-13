@@ -47,6 +47,7 @@ version_1=$(printf '%x\n' $version) #hexadecimal
 version_2=$(echo "0x00000$version_1") #create a loop to add automatc 0
 
 echo $version_2 > version.txt
+transaction=$((cpt+=1))
 
 ## Previous block hash ##
 
@@ -55,10 +56,12 @@ first_prev=$(cat version.enc)
 
 rm version.enc
 rm version.txt
+transaction=$((cpt+=1))
 
 ## Time ##
 
 date=$(date +%s) #convert epoch converter / Timestamp
+transaction=$((cpt+=1))
 
 ## Merkle root ##
 
@@ -69,6 +72,7 @@ for (( i = 0 ; i < $number ; i++)); do
 	openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile"
 	prompt=$(cat merkle_root$i.enc)
 	full_merkle_root="$full_merkle_root $prompt"
+	transaction=$((cpt+=1))
 done
 
 ## Difficulty bits ##
@@ -76,9 +80,28 @@ done
 utime="$( TIMEFORMAT='%lR';time ( printf $full_merkle_root | xxd  -c 256 -ps ) 2>&1 1>/dev/null )" #calcule temps de hash en hexa
 utime0=$(echo "${utime//s}")
 utime1=$(echo "${utime0//m}")
+transaction=$((cpt+=1))
 
 ## Nonce ##
 
-nonce=$(openssl rand -hex 12)
+create_nonce(){
+	nonce=$(openssl rand -hex 12)
+	transaction=$((cpt+=1))
+}
+
+check_nonce()
+{
+	if grep -Fxq "$nonce" db.json
+	then #if found
+		nonce=""
+		create_nonce
+	    	check_nonce
+	else
+    		echo ""
+	fi
+}
+
+create_nonce
+check_nonce
 
 ### Header Hashing END  ###
