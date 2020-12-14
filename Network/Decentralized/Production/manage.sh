@@ -105,3 +105,31 @@ create_nonce
 check_nonce
 
 ### Header Hashing END  ###
+
+### Structure of a Block ###
+
+## Block size ##
+
+block_size=0
+number_block_size=0
+block_size=$(sed '6!d' db.json) #find the last block
+number_block_size=$(echo $block_size | sed 's/[^0-9]*//g')
+number_block_size=$((number_block_size+=1))
+transaction=$((cptt+=1))
+
+## Block header ##
+
+block_header=$version-$first_prev-$date-$utime1-$nonce
+transaction=$((cptt+=1))
+
+## Transaction counter ##
+
+counter_transaction=$((cptt+=1))
+counter_header_transaction=$((cpt+=1)
+
+
+## Transaction ##
+
+final_transaction=$transaction+$
+
+### Stucture of a Block END ###
