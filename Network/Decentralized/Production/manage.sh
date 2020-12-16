@@ -60,6 +60,7 @@ transaction=$((cpt+=1))
 
 ## Time ##
 
+full_date=$(date +"%m-%d-%y-%r")
 date=$(date +%s) #convert epoch converter / Timestamp
 transaction=$((cpt+=1))
 
@@ -127,9 +128,8 @@ transaction=$((cptt+=1))
 counter_transaction=$((cptt+=1))
 counter_header_transaction=$((cpt+=1)
 
-
 ## Transaction ##
 
-final_transaction=$transaction+$
+final_transaction=$transaction+$counter_header_transaction
 
 ### Stucture of a Block END ###
