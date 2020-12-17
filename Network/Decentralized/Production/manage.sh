@@ -66,10 +66,16 @@ transaction=$((cpt+=1))
 
 ## Merkle root ##
 
+transaction_size=0
+number_transaction_size=0
+transaction_size=$(sed '6!d' db.json) #find the last transaction
+number_transaction_size=$(echo $transaction_size | sed 's/[^0-9]*//g')
+number_transaction_size=$((number_transaction_size+=1))
+
 full_merkle_root=""
 
 for (( i = 0 ; i < $number ; i++)); do
-	echo "Merkle_root$i" > merkle_root$i
+	echo "Merkle_root$i-$number_transaction_size" > merkle_root$i
 	openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile"
 	prompt=$(cat merkle_root$i.enc)
 	full_merkle_root="$full_merkle_root $prompt"
@@ -105,6 +111,8 @@ check_nonce()
 create_nonce
 check_nonce
 
+hashage_nonce=$(openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile")
+
 ### Header Hashing END  ###
 
 ### Structure of a Block ###
@@ -133,3 +141,5 @@ counter_header_transaction=$((cpt+=1)
 final_transaction=$transaction+$counter_header_transaction
 
 ### Stucture of a Block END ###
+
+
