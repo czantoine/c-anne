@@ -142,4 +142,9 @@ final_transaction=$transaction+$counter_header_transaction
 
 ### Stucture of a Block END ###
 
+### Hashage ###
+
+hashage=$number_block_size-$block_header-$counter_header_transaction-$final_transaction
+
+### Hashage END ###
 
