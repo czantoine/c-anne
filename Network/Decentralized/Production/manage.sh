@@ -148,3 +148,16 @@ hashage=$number_block_size-$block_header-$counter_header_transaction-$final_tran
 
 ### Hashage END ###
 
+### Others informations ###
+
+mineur=$(hostame)
+
+status=confirmed
+
+size=$(echo $hashage | wc -c)
+size2=$(echo $full_merkle_root | wc -c)
+
+poid=$((size+size2))
+
+### Others informations END ###
+
