@@ -1,10 +1,25 @@
 {
-	"transactions":[
+	"transactions":[{
+		"hashage": "BBBBB",
+		"hashage_w": "<a href=\"BBBBB.html\">BBBBB</a>",
+		"block": 2,
+		"horodatage": "20-dec-2020-09:40",
+		"hauteur": 10,
+		"mineur": 2,
+		"nombre_transactions": 1,
+		"difficulte": 1,
+		"merkle": 10,
+    	"statut": "Confirmé",
+   		"taille": 3,
+  		"poid": 11,
+ 		"nonce": 1,
+    	"version": 0.0
+		},
 		{
-		"hashage": "AAAAAA",
+		"hashage": "AAAAA",
 		"hashage_w": "<a href=\"AAAAA.html\">AAAAA</a>",
 		"block": 1,
-		"horodatage": "3-dec-2020-09:40",
+		"horodatage": "-dec-2020-09:40",
 		"hauteur": 10,
 		"mineur": 2,
 		"nombre_transactions": 1,
@@ -19,8 +34,34 @@
 	],
 	"blocks":[
 		{
-		"hashage": "AAAAAA2",
-		"hashage_w": "<a href=\"AAAAA2.html\">AAAAAA2</a>",
+		"hashage": "BBBBB2",
+		"hashage_w": "<a href=\"BBBBB2.html\">BBBBB2</a>",
+		"block": 2,
+		"horodatage": "20-dec-2020-09:40",
+		"difficulte": 1,
+		"hauteur": 9,
+		"hauteur_w": "<a href=\"BBBBB2.html\">9</a>",
+    	"statut": "Confirmé",
+   		"taille": 3,
+   		"poid": 11,
+    	"version": 0.0
+		},
+		{
+		"hashage": "BBBBB1",
+		"hashage_w": "<a href=\"BBBBB1.html\">BBBBB1</a>",
+		"block": 2,
+		"horodatage": "20-dec-2020-09:40",
+		"difficulte": 1,
+		"hauteur": 9,
+		"hauteur_w": "<a href=\"BBBBB1.html\">9</a>",
+    	"statut": "Confirmé",
+   		"taille": 3,
+   		"poid": 11,
+    	"version": 0.0
+		},
+		{
+		"hashage": "AAAAA2",
+		"hashage_w": "<a href=\"AAAAA2.html\">AAAAA2</a>",
 		"block": 1,
 		"horodatage": "3-dec-2020-09:40",
 		"difficulte": 1,
