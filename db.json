@@ -1,23 +1,6 @@
 {
 	"transactions":[
 		{
-		"hashage": "BBBBB",
-		"hashage_w": "<a href=\"BBBBB.html\">BBBBB</a>",
-		"block": 2,
-		"horodatage": "3-dec-2020-09:41",
-		"hauteur": 10,
-		"hashage_w": "<a href=\"BBBBB.html\">BBBBB</a>",
-		"mineur": 3,
-		"nombre_transactions": 2,
-		"difficulte": 2,
-		"merkle": 9,
-    	"statut": "Non Confirmé",
-   		"taille": 4,
-  		"poid": 12,
- 		"nonce": 5,
-    	"version": 0.0
-		},
-		{
 		"hashage": "AAAAAA",
 		"hashage_w": "<a href=\"AAAAAA.html\">AAAAA</a>",
 		"block": 1,
@@ -30,22 +13,22 @@
     	"statut": "Confirmé",
    		"taille": 3,
   		"poid": 11,
- 		"nonce": 4,
+ 		"nonce": 0,
     	"version": 0.0
 		}
 	],
 	"blocks":[
 		{
-		"hashage": "BBBBB1",
-		"hashage_w": "<a href=\"BBBBB1.html\">BBBBB1</a>",
-		"block": 2,
-		"horodatage": "3-dec-2020-09:41",
-		"difficulte": 2,
-		"hauteur": 10,
-		"hauteur_w": "<a href=\"BBBBB1.html\">10</a>",
-    	"statut": "Non Confirmé",
-   		"taille": 4,
-   		"poid": 12,
+		"hashage": "AAAAA2",
+		"hashage_w": "<a href=\"AAAAA1.html\">AAAAA2</a>",
+		"block": 1,
+		"horodatage": "3-dec-2020-09:40",
+		"difficulte": 1,
+		"hauteur": 9,
+		"hauteur_w": "<a href=\"AAAAA2.html\">9</a>",
+    	"statut": "Confirmé",
+   		"taille": 3,
+   		"poid": 11,
     	"version": 0.0
 		},
 		{
