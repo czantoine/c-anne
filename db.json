@@ -2,7 +2,7 @@
 	"transactions":[
 		{
 		"hashage": "AAAAAA",
-		"hashage_w": "<a href=\"AAAAAA.html\">AAAAA</a>",
+		"hashage_w": "<a href=\"AAAAA.html\">AAAAA</a>",
 		"block": 1,
 		"horodatage": "3-dec-2020-09:40",
 		"hauteur": 10,
@@ -20,12 +20,12 @@
 	"blocks":[
 		{
 		"hashage": "AAAAAA2",
-		"hashage_w": "<a href=\"AAAAAA2.html\">AAAAAA2</a>",
+		"hashage_w": "<a href=\"AAAAA2.html\">AAAAAA2</a>",
 		"block": 1,
 		"horodatage": "3-dec-2020-09:40",
 		"difficulte": 1,
 		"hauteur": 9,
-		"hauteur_w": "<a href=\"AAAAAA2.html\">9</a>",
+		"hauteur_w": "<a href=\"AAAAA2.html\">9</a>",
     	"statut": "Confirmé",
    		"taille": 3,
    		"poid": 11,
