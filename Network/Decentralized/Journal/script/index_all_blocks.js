@@ -15,12 +15,10 @@ function index_all_blocks(response) {
   var out = "<table>";
   for(i = 0; i < arr.length; i++) {
     out += "<tr><td>" + 
-    arr[i].hauteur_w +
+    arr[i].hashage_w +
     "</td><td>" +
     arr[i].horodatage +
-    "</td><td>" +
-    arr[i].taille + "<spam> bytes</spam>" +
-    "</td></tr>";
+    "</td><td>";
   }
   out += "</table>";
   document.getElementById("index_all_blocks").innerHTML = out;

@@ -15,10 +15,12 @@ function index_all_transactions(response) {
   var out = "<table>";
   for(i = 0; i < arr.length; i++) {
     out += "<tr><td>" + 
-    arr[i].hashage_w +
+    arr[i].hauteur_w +
     "</td><td>" +
     arr[i].horodatage +
-    "</td><td>";
+    "</td><td>" +
+    arr[i].taille + "<spam> bytes</spam>" +
+    "</td></tr>";
   }
   out += "</table>";
   document.getElementById("index_all_transactions").innerHTML = out;
