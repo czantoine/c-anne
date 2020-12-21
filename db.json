@@ -1,5 +1,6 @@
 {
-	"transactions":[{
+	"blocks":[
+		{
 		"hashage": "BBBBB",
 		"hashage_w": "<a href=\"BBBBB.html\">BBBBB</a>",
 		"block": 2,
@@ -32,7 +33,7 @@
     	"version": 0.0
 		}
 	],
-	"blocks":[
+	"transactions":[
 		{
 		"hashage": "BBBBB2",
 		"hashage_w": "<a href=\"BBBBB2.html\">BBBBB2</a>",
