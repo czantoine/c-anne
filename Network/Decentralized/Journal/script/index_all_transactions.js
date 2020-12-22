@@ -17,8 +17,10 @@ function index_all_transactions(response) {
     out += "<tr><td>" + 
     arr[i].hauteur_w +
     "</td><td>" +
+    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
     arr[i].horodatage +
     "</td><td>" +
+    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +
     arr[i].taille + "<spam> bytes</spam>" +
     "</td></tr>";
   }

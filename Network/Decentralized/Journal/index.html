@@ -3,29 +3,59 @@
 
 <link rel="stylesheet" href="css/style.css">
 <meta name="author" content="czantoine">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
 
-	<h2>Dernières transactions</h2>
-	<table id="index_all_transactions">	
-	</table>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" class="active">Home</a>
+		<a href="all_transactions.html">Transactions</a>
+		<a href="all_blocks.html">Blocs</a>
+		<a href="about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
 
-	<button>
-		<a href="all_transactions.html"> Afficher tous les transactions → </a>
-	</button>
+	<div class="index_block">
+		<div class="index_block1">
+			<h2>Dernières transactions</h2>
+			<p1>Hauteur &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Miné &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Taille</p1>
+			<body onload = "JavaScript:AutoRefresh(9000);">
+				<table id="index_all_transactions">	
+				</table>
+			</body>
 
-	<h2>Derniers blocs</h2>
+			<br/>
 
-	<table id="index_all_blocks">	
-	</table>
+			<button>
+				<a href="all_transactions.html"> Afficher tous les transactions → </a>
+			</button>
+		</div>
 
-	<button>
-		<a href="all_blocks.html"> Afficher toutes les blocs → </a>
-	</button>
+		<div class="index_block2">
+			<h2>Derniers blocs</h2>
+			<p1>&nbsp;Hashage &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Heure </p1>
+			<body onload = "JavaScript:AutoRefresh(9000);">
+				<table id="index_all_blocks">	
+				</table>
+			</body>
+			
+			<br/>
+
+			<button>
+				<a href="all_blocks.html"> Afficher toutes les blocs → </a>
+			</button>
+		</div>
+	</div>
 
 	<script src="script/index_all_blocks.js"></script>
 	<script src="script/index_all_transactions.js"></script>
+	<script src="script/autorefresh.js"></script>
+	<script src="script/menu.js"></script>
 
 </body>
 </html>

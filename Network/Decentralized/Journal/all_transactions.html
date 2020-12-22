@@ -3,16 +3,35 @@
 
 <link rel="stylesheet" href="css/style.css">
 <meta name="author" content="czantoine">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
 
-	<h2>Transactions</h2>
+	<div class="topnav" id="myTopnav">
+		<a href="index.html" class="active">Home</a>
+		<a href="all_transactions.html">Transactions</a>
+		<a href="all_blocks.html">Blocs</a>
+		<a href="about.html">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
 
-	<table id="all_transactions">	
-	</table>
+	<div class="index_block">
+		<h2>Transactions</h2>
+		
+		<body onload = "JavaScript:AutoRefresh(9000);">
+			<table id="all_transactions">	
+			</table>
+		</body>
+	</div>
 
 	<script src="script/all_transactions.js"></script>
+	<script src="script/autorefresh.js"></script>
+	<script src="script/menu.js"></script>
 
 </body>
 </html>

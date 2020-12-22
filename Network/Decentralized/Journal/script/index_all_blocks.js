@@ -14,10 +14,11 @@ function index_all_blocks(response) {
   var i;
   var out = "<table>";
   for(i = 0; i < arr.length; i++) {
-    out += "<tr><td>" + 
-    arr[i].hashage_w +
+    out += "<tr><td> " + 
+    arr[i].hashage_w + 
     "</td><td>" +
-    arr[i].horodatage +
+    "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + 
+    arr[i].horodatage + 
     "</td><td>";
   }
   out += "</table>";
