@@ -38,6 +38,25 @@ for i in "${!A[@]}"; do
 	printf 'A[%s] = %s\n' "$i" "${A[i]}" >/dev/null
 done
 
+#Encrypt split files parts
+	#Create a dir with private and public key
+for (i = 0; i < $number; i++); do
+	openssl genrsa -out private_${i}.pem
+	open rsa -in private_${i}.pem -out public_${i}.pem -outform PEM -pubout
+	openssl rsault -encrypt -inkey public_${i}.pem -pubin -in file_${i}.sql -out file_{i}.ssl
+done
+
+#delete original split file part
+for (i = 0; i < $number; i++); do
+	rm file_${i}.sql
+done
+
+#send files into servers
+
+for (i = 0; i < $number; i++); do
+	scp file_{i}.ssl servername@ip.txt:.
+done
+
 #### Block Header Hashing ####
 
 ## Constant info ##
