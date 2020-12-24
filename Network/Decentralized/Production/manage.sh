@@ -180,3 +180,49 @@ poid=$((size+size2))
 
 ### Others informations END ###
 
+### Menu html ###
+
+menu0(){
+	echo "" >> $hasgage_block.html
+	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage_block.html
+}
+
+menu1(){
+	echo -e '\t<div class="topnav" id="myTopnav">' >> $hasgage_block.html
+	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hasgage_block.html
+	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hasgage_block.html
+	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hasgage_block.html
+	echo -e '\t\t<a href="about.html">About</a>' >> $hasgage_block.html
+	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hasgage_block.html
+	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hasgage_block.html
+	echo -e '\t\t</a>' >> $hasgage_block.html
+	echo -e '\t</div>' >> $hasgage_block.html
+}
+
+menu2(){
+	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage_block.html
+}
+
+menu3(){
+	echo "" >> $hasgage.html
+	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage.html
+}
+
+menu4(){
+	echo -e '\t<div class="topnav" id="myTopnav">' >> $hasgage.html
+	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hasgage.html
+	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hasgage.html
+	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hasgage.html
+	echo -e '\t\t<a href="about.html">About</a>' >> $hasgage.html
+	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hasgage.html
+	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hasgage.html
+	echo -e '\t\t</a>' >> $hasgage.html
+	echo -e '\t</div>' >> $hasgage.html
+}
+
+menu5(){
+	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage.html	
+}
+
+### Menu html END ###
+
