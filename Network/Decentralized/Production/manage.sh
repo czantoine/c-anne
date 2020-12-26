@@ -226,3 +226,34 @@ menu5(){
 
 ### Menu html END ###
 
+### Added db.json and html blocks file ###
+
+## Blocks ##
+
+new_transactions=file_transactions.txt
+touch $new_transactions
+
+echo -e '\t\t{' >> $new_transactions
+echo -e '\t\t"hashage": "'$hashage'"'',' >> $new_transactions
+echo -e '\t\t"hashage_w": "<a href="'$hashage'".html">'$hashage'</a>",' >> $new_transactions
+echo -e '\t\t"block": "'$number_block_size'"'',' >> $new_transactions
+echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_transactions
+echo -e '\t\t"hauteur": "'$number'"'',' >> $new_transactions
+echo -e '\t\t"mineur": "'$mineur'"'',' >> $new_transactions
+echo -e '\t\t"nombre_transactions": "'$final_transaction'"'',' >> $new_transactions
+echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_transactions
+echo -e '\t\t"merkle": "'$full_merkle_root'"'',' >> $new_transactions
+echo -e '\t\t"statut": "'$status'"'',' >> $new_transactions
+echo -e '\t\t"taille": "'$size'"'',' >> $new_transactions
+echo -e '\t\t"poid": "'$poid'"'',' >> $new_transactions
+echo -e '\t\t"nonce": "'$nonce'"'',' >> $new_transactions
+echo -e '\t\t"version": "'$version'"' >> $new_transactions
+echo -e '\t\t},' >> $new_transactions
+
+add_new_transactions=$(cat $new_transactions)
+
+new_db=$(awk 'NR==3{system("cat '$new_transactions' ")} 1' db.json)
+echo "$new_db" > db.json
+
+rm $new_transactions
+
