@@ -257,3 +257,40 @@ echo "$new_db" > db.json
 
 rm $new_transactions
 
+## Transactions ##
+
+for (( i = 0 ; i < $number ; i++)); do
+
+	hashage_block=$i-$block_header-$final_transaction
+
+	decimal_number_block_size=$(echo "0.$i+$number_block_size" | bc)
+
+	new_block$i=file_transactions.txt$i
+	touch new_block$i
+
+	echo -e '\t\t{' >> $new_block$i
+	echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block$i
+	 >> $new_block$i
+	echo -e '\t\t"block": "'$decimal_number_block_size'"'',' >> $new_block$i
+	echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block$i
+	echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block$i
+	echo -e '\t\t"hauteur": "'$number'"'',' >> $new_block$i
+	echo -e '\t\t"statut": "'$status'"'',' >> $new_block$i
+	echo -e '\t\t"taille": "'$size'"'',' >> $new_block$i
+	echo -e '\t\t"poid": "'$poid'"'',' >> $new_block$i
+	echo -e '\t\t"version": "'$version'"' >> $new_block$i
+	echo -e '\t\t}' >> $new_block$i
+
+	add_new_block=$(cat new_block$i)
+	find_line=$(sed -n '/transactions/=' db.json)
+	find_line=$(($find_line+1))
+	new_db=$(awk 'NR=='find_line'{system("cat '$new_block$i' ")} 1' db.json)
+	echo "$new_db" > db.json
+
+	rm $new_block$i
+
+	
+
+	### Create Transactions html file END ###
+	
+done
