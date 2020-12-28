@@ -358,3 +358,10 @@ done
 
 ### Added db.json and html blocks file END ###
 
+### Communication between servers ###
+
+for server in $(cat ip.txt) ; do
+	ssh root@${server} 'bash -s' < ./permission_check.sh ;
+done
+
+### Communication between servers END ###
