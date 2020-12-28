@@ -289,8 +289,72 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	rm $new_block$i
 
+	### Create html file ###
+
+	## Transactions file ##
+
+	touch $hashage_block.html
+	echo "$hashage_block.html" >> stock_path.txt
+
+	echo -e '<!DOCTYPE html>' >> $hashage_block.html
+	echo -e '<html lang="fr">' >> $hashage_block.html
+	echo "" >> $hasgage_block.html
+	echo '<link rel="stylesheet" href="css/style.css">' >> $hashage_block.html
+	echo '<meta name="author" content="czantoine">' >> $hashage_block.html
+	echo '<meta charset="UTF-8">' >> $hashage_block.html
+	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $hashage_block.html
+
+	menu0
+
+	echo "" >> $hashage_block.html
+	echo '<body>' >> $hashage_block.html
+
+	menu1
 	
+	echo "" >> $hashage_block.html
+
+	echo -e '<div class="margin">' >> $hasgage_block.html
+
+	echo -e '\t<h2>Résumé</h2>' >> $hashage_block.html
+	echo "" >> $hashage_block.html
+	echo -e "\t<p>Hashage $hashage</p>" >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e "\t<h2>Détails</h2>" >> $hashage_block.html
+
+	echo -e '\t<p>Hashage<span STYLE="padding:0 0 0 80px;">'$hashage'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Statut</b> <span STYLE="padding:0 0 0 100px;">'Confirmé'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Heure reçue</b> <span STYLE="padding:0 0 0 55px;">'$full_date'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Taille</b> <span STYLE="padding:0 0 0 108px;">'$size'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Poids</b> <span STYLE="padding:0 0 0 103px;">'$poid'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Confirmations</b> <span STYLE="padding:0 0 0 40px;">'$confirmations'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo -e '\t<p><b>Nonce</b> <span STYLE="padding:0 0 0 40px;">'$nonce'</p>' >> $hashage_block.html
+	echo -e "\t<hr>" >> $hashage_block.html
+
+	echo "" >> $hashage_block.html
+
+	menu2
+
+	echo "</body>" >> $hashage_block.html
+	echo "</html>" >> $hashage_block.html
+
+	echo -e '</div>' >> $hasgage_block.html
 
 	### Create Transactions html file END ###
 	
 done
+
+### Added db.json and html blocks file END ###
+
