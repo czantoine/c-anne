@@ -358,6 +358,22 @@ done
 
 ### Added db.json and html blocks file END ###
 
+### Create Block file html ###
+
+touch $hashage.html
+
+echo -e '<!DOCTYPE html>' >> $hashage.html
+echo -e '<html lang="fr" >' >> $hashage.html
+echo "" >> $hasgage_block.html
+echo '<link rel="stylesheet" href="css/style.css">' >> $hashage.html
+echo '<meta name="author" content="czantoine">' >> $hashage.html
+echo '<meta charset="UTF-8">' >> $hashage.html
+echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $hashage.html
+
+
+
+### Create Block file html END ##
+
 ### Communication between servers ###
 
 for server in $(cat ip.txt) ; do
