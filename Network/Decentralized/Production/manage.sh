@@ -303,6 +303,9 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo '<meta name="author" content="czantoine">' >> $hashage_block.html
 	echo '<meta charset="UTF-8">' >> $hashage_block.html
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $hashage_block.html
+	echo '<link rel="shortcut icon" type="image/png" href="c-anne_logo.png"/>' >> $hasgage_block.html
+	echo "" >> $hasgage_block.html
+	echo '<title>C-anne Journal</title>' >> $hasgage_block.html
 
 	menu0
 
@@ -369,7 +372,64 @@ echo '<link rel="stylesheet" href="css/style.css">' >> $hashage.html
 echo '<meta name="author" content="czantoine">' >> $hashage.html
 echo '<meta charset="UTF-8">' >> $hashage.html
 echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $hashage.html
+echo '<link rel="shortcut icon" type="image/png" href="c-anne_logo.png"/>' >> $hashage.html
+echo "" >> $hasgage_block.html
+echo '<title>C-anne Journal</title>' >> $hashage.html
 
+menu3
+
+echo "" >> $hashage.html
+echo "<body>" >> $hashage.html
+
+menu4
+
+echo "" >> $hashage.html
+
+echo -e '<div class="margin">' >> $hasgage_block.html
+
+echo -e "\t<h2>Bloc $number_block_size</h2>" >> $hashage.html
+echo "" >> $hashage.html
+
+echo -e '\t<p>Hashage<span STYLE="padding:0 0 0 140px;">'$hashage'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Confirmations</b> <span STYLE="padding:0 0 0 100px;">'$confirmations'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Horodatage (timestramp)</b> <span STYLE="padding:0 0 0 10px;">'$full_date'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Hauteur</b> <span STYLE="padding:0 0 0 150px;">'$number'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Mineur</b> <span STYLE="padding:0 0 0 160px;">'$mineur'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Nombre de transactions</b> <span STYLE="padding:0 0 0 25px;">'$number'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Difficulté</b> <span STYLE="padding:0 0 0 140px;">'$number'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Racine de Merkle</b> <span STYLE="padding:0 0 0 78px;">'$full_merkle_root'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Version</b> <span STYLE="padding:0 0 0 150px;">'$version'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Poids</b> <span STYLE="padding:0 0 0 170px;">'$poid'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Taille</b> <span STYLE="padding:0 0 0 165px;">'$size'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+
+echo -e '\t<p><b>Nonce</b> <span STYLE="padding:0 0 0 165px;">'$nonce'</p>' >> $hashage.html
+echo -e "\t<hr>" >> $hashage.html
+echo -e "\t<br/>" >> $hashage.html
+echo "" >> $hasgage.html
+
+echo -e "\t<h2>Transactions des blocs</h2>" >> $hashage.html
+echo "" >> $hasgage.html
 
 
 ### Create Block file html END ##
