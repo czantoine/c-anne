@@ -431,6 +431,24 @@ echo "" >> $hasgage.html
 echo -e "\t<h2>Transactions des blocs</h2>" >> $hashage.html
 echo "" >> $hasgage.html
 
+n=1
+for (( i = 0 ; i < $number ; i++)); do
+	rep_stock_path=$(sed -n "$n"p stock_path.txt)
+	echo -e '\t<a href="'$rep_stock_path.html'">'$rep_stock_path'</a>' >> hashage.html
+	echo -e "\t<hr>" >> hashage.html
+	n=$((n+1))
+do
+
+echo "" >> $hashage.html
+
+menu5
+
+echo "</body>" >> $hashage.html
+echo "</html>" >> $hashage.html
+
+echo -e '</div>' >> $hasgage.html
+
+rm stock_path.txt
 
 ### Create Block file html END ##
 
