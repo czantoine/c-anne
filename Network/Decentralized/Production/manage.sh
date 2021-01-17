@@ -176,7 +176,7 @@ counter_header_transaction=$((cpt+=1))
 
 ## Transaction ##
 
-final_transaction=$transaction+$counter_header_transaction
+final_transaction=$(($transaction+$counter_header_transaction))
 
 ### Stucture of a Block END ###
 
@@ -254,19 +254,19 @@ touch $new_transactions
 
 echo -e '\t\t{' >> $new_transactions
 echo -e '\t\t"hashage": "'$hashage'"'',' >> $new_transactions
-echo -e '\t\t"hashage_w": "<a href="'$hashage'".html">'$hashage'</a>",' >> $new_transactions
-echo -e '\t\t"block": "'$number_block_size'"'',' >> $new_transactions
+echo -e '\t\t"hashage_w": "<a href=\"'$hashage'.html\">'$hashage'</a>",' >> $new_transactions
+echo -e '\t\t"block": '$number_block_size''',' >> $new_transactions
 echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_transactions
 echo -e '\t\t"hauteur": "'$number'"'',' >> $new_transactions
 echo -e '\t\t"mineur": "'$mineur'"'',' >> $new_transactions
-echo -e '\t\t"nombre_transactions": "'$final_transaction'"'',' >> $new_transactions
+echo -e '\t\t"nombre_transactions": '$final_transaction''',' >> $new_transactions
 echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_transactions
 echo -e '\t\t"merkle": "'$full_merkle_root'"'',' >> $new_transactions
 echo -e '\t\t"statut": "'$status'"'',' >> $new_transactions
-echo -e '\t\t"taille": "'$size'"'',' >> $new_transactions
-echo -e '\t\t"poid": "'$poid'"'',' >> $new_transactions
+echo -e '\t\t"taille": '$size''',' >> $new_transactions
+echo -e '\t\t"poid": '$poid''',' >> $new_transactions
 echo -e '\t\t"nonce": "'$nonce'"'',' >> $new_transactions
-echo -e '\t\t"version": "'$version'"' >> $new_transactions
+echo -e '\t\t"version": '$version'' >> $new_transactions
 echo -e '\t\t},' >> $new_transactions
 
 add_new_transactions=$(cat $new_transactions)
@@ -288,15 +288,15 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo -e '\t\t{' >> $new_block
 	echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block
-	echo -e '\t\t"block": "'$decimal_number_block_size'"'',' >> $new_block
+	echo -e '\t\t"block": '$decimal_number_block_size''',' >> $new_block
 	echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block
 	echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block
-	echo -e '\t\t"hauteur": "'$number'"'',' >> $new_block
+	echo -e '\t\t"hauteur": '$number''',' >> $new_block
 	echo -e '\t\t"statut": "'$status'"'',' >> $new_block
-	echo -e '\t\t"taille": "'$size'"'',' >> $new_block
-	echo -e '\t\t"poid": "'$poid'"'',' >> $new_block
-	echo -e '\t\t"version": "'$version'"' >> $new_block
-	echo -e '\t\t}' >> $new_block
+	echo -e '\t\t"taille": '$size''',' >> $new_block
+	echo -e '\t\t"poid": '$poid''',' >> $new_block
+	echo -e '\t\t"version": '$version'' >> $new_block
+	echo -e '\t\t},' >> $new_block
 
 	add_new_block=$(cat $new_block)
 	find_line=$(sed -n '/"transactions"/=' db.json)
