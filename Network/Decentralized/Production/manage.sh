@@ -10,8 +10,25 @@ then
 	exit 1
 fi
 
+if [ ! -f "server.txt" ]
+then
+        echo "error file with name server"
+        exit 1
+fi
+
 #number of ip into ip.txt
 number=$(wc -l < ip.txt)
+
+#number of server into server.txt
+number_server=$(wc -l < server.txt)
+
+if [ $number_server -eq $number ]
+then
+        echo ""
+else
+        echo "error of number server and ip"
+        exit 1
+fi
 
 #split the orign file by the number of server invalible
 cp file repo_dechargement/
