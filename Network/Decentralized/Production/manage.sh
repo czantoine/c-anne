@@ -451,11 +451,3 @@ echo -e '</div>' >> $hasgage.html
 rm stock_path.txt
 
 ### Create Block file html END ##
-
-### Communication between servers ###
-
-for server in $(cat ip.txt) ; do
-	ssh root@${server} 'bash -s' < ./permission_check.sh ;
-done
-
-### Communication between servers END ###
