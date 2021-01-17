@@ -1,6 +1,22 @@
 {
 	"blocks":[
 		{
+		"hashage": "3-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-9-2+9",
+		"hashage_w": "<a href="3-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-9-2+9".html">3-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-9-2+9</a>",
+		"block": "3",
+		"horodage": "01-17-21-05:05:26 PM",
+		"hauteur": "3",
+		"mineur": "ubuntu",
+		"nombre_transactions": "2+9",
+		"difficulte": "00.002",
+		"merkle": " U2FsdGVkX1/70cQ9CL1OmVpl7yqiIhCN9bg4AO0dwwg= U2FsdGVkX1/eEOXYEvNk2upg5LvicE2gS5H0kRQUga0= U2FsdGVkX180umRd6krKsEkATTlZVqArJ0gPV0LOAnE=",
+		"statut": "confirmed",
+		"taille": "98",
+		"poid": "233",
+		"nonce": "03cf8bb9883c4a66f079e752",
+		"version": "0"
+		},
+		{
 		"hashage": "BBBBB",
 		"hashage_w": "<a href=\"BBBBB.html\">BBBBB</a>",
 		"block": 2,
@@ -34,6 +50,39 @@
 		}
 	],
 	"transactions":[
+		{
+		"hashage": "2-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-2+9",
+		"block": "3.2",
+		"horodage": "01-17-21-05:05:26 PM",
+		"difficulte": "00.002",
+		"hauteur": "3",
+		"statut": "confirmed",
+		"taille": "98",
+		"poid": "233",
+		"version": "0"
+		}
+		{
+		"hashage": "1-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-2+9",
+		"block": "3.1",
+		"horodage": "01-17-21-05:05:26 PM",
+		"difficulte": "00.002",
+		"hauteur": "3",
+		"statut": "confirmed",
+		"taille": "98",
+		"poid": "233",
+		"version": "0"
+		}
+		{
+		"hashage": "0-0-U2FsdGVkX191zm1iLtzzKyabFkxCB0HoMA9IVhVKwkQ=-1610899526-00.002-03cf8bb9883c4a66f079e752-2+9",
+		"block": "3.0",
+		"horodage": "01-17-21-05:05:26 PM",
+		"difficulte": "00.002",
+		"hauteur": "3",
+		"statut": "confirmed",
+		"taille": "98",
+		"poid": "233",
+		"version": "0"
+		}
 		{
 		"hashage": "BBBBB2",
 		"hashage_w": "<a href=\"BBBBB2.html\">BBBBB2</a>",
