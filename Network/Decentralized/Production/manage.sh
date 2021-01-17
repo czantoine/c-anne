@@ -54,7 +54,9 @@ done
 #send files into servers
 
 for (i = 0; i < $number; i++); do
-	scp file_{i}.ssl servername@ip.txt:.
+	j = i+1
+	ip = sed -n "${j} p" ~/ip.txt
+	scp file_{i}.ssl server${j}@${ip}:.
 done
 
 #### Block Header Hashing ####
