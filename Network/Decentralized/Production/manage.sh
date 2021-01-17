@@ -202,45 +202,45 @@ poid=$((size+size2))
 ### Menu html ###
 
 menu0(){
-	echo "" >> $hasgage_block.html
+	echo "" >> $hashage_block.html
 	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage_block.html
 }
 
 menu1(){
-	echo -e '\t<div class="topnav" id="myTopnav">' >> $hasgage_block.html
-	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hasgage_block.html
-	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hasgage_block.html
-	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hasgage_block.html
-	echo -e '\t\t<a href="about.html">About</a>' >> $hasgage_block.html
-	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hasgage_block.html
-	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hasgage_block.html
-	echo -e '\t\t</a>' >> $hasgage_block.html
-	echo -e '\t</div>' >> $hasgage_block.html
+	echo -e '\t<div class="topnav" id="myTopnav">' >> $hashage_block.html
+	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hashage_block.html
+	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hashage_block.html
+	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hashage_block.html
+	echo -e '\t\t<a href="about.html">About</a>' >> $hashage_block.html
+	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hashage_block.html
+	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hashage_block.html
+	echo -e '\t\t</a>' >> $hashage_block.html
+	echo -e '\t</div>' >> $hashage_block.html
 }
 
 menu2(){
-	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage_block.html
+	echo -e '\t<script src="script/menu.js"></script>' >> $hashage_block.html
 }
 
 menu3(){
-	echo "" >> $hasgage.html
-	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage.html
+	echo "" >> $hashage.html
+	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hashage.html
 }
 
 menu4(){
-	echo -e '\t<div class="topnav" id="myTopnav">' >> $hasgage.html
-	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hasgage.html
-	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hasgage.html
-	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hasgage.html
-	echo -e '\t\t<a href="about.html">About</a>' >> $hasgage.html
-	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hasgage.html
-	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hasgage.html
-	echo -e '\t\t</a>' >> $hasgage.html
-	echo -e '\t</div>' >> $hasgage.html
+	echo -e '\t<div class="topnav" id="myTopnav">' >> $hashage.html
+	echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hashage.html
+	echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hashage.html
+	echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hashage.html
+	echo -e '\t\t<a href="about.html">About</a>' >> $hashage.html
+	echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hashage.html
+	echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hashage.html
+	echo -e '\t\t</a>' >> $hashage.html
+	echo -e '\t</div>' >> $hashage.html
 }
 
 menu5(){
-	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage.html
+	echo -e '\t<script src="script/menu.js"></script>' >> $hashage.html
 }
 
 ### Menu html END ###
@@ -287,19 +287,18 @@ for (( i = 0 ; i < $number ; i++)); do
 	new_block=file_block.txt$i
 
 	echo -e '\t\t{' >> $new_block
-    echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block
-    echo -e '\t\t"hashatage_w": "<a href=\"'$hashage_block'.html\">'$hashage_block'</a>",' >> $new_block
-    echo -e '\t\t"block": '$decimal_number_block_size''',' >> $new_block
-    echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block
-    echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block
-    echo -e '\t\t"hauteur": '$number''',' >> $new_block
-    echo -e '\t\t"hauteur_w": "<a href=\"'$hashage_block'.html\">'$number'</a>",' >> $new_block
-    echo -e '\t\t"statut": "'$status'"'',' >> $new_block
-    echo -e '\t\t"taille": '$size''',' >> $new_block
-    echo -e '\t\t"poid": '$poid''',' >> $new_block
-    echo -e '\t\t"version": '$version'' >> $new_block
-    echo -e '\t\t},' >> $new_block
-
+	echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block
+	echo -e '\t\t"hashage_w": "<a href=\"'$hashage_block'.html\">'$hashage_block'</a>",' >> $new_block
+	echo -e '\t\t"block": '$decimal_number_block_size''',' >> $new_block
+	echo -e '\t\t"horodatage": "'$full_date'"'',' >> $new_block
+	echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block
+	echo -e '\t\t"hauteur": '$number''',' >> $new_block
+	echo -e '\t\t"hauteur_w": "<a href=\"'$hashage_block'.html\">'$decimal_number_block_size'</a>",' >> $new_block
+	echo -e '\t\t"statut": "'$status'"'',' >> $new_block
+	echo -e '\t\t"taille": '$size''',' >> $new_block
+	echo -e '\t\t"poid": '$poid''',' >> $new_block
+	echo -e '\t\t"version": '$version'' >> $new_block
+	echo -e '\t\t},' >> $new_block
 
 	add_new_block=$(cat $new_block)
 	find_line=$(sed -n '/"transactions"/=' db.json)
@@ -327,12 +326,21 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo "" >> $hasgage_block.html
 	echo '<title>C-anne Journal</title>' >> $hasgage_block.html
 
-	menu0
+	echo "" >> $hashage_block.html
+        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage_block.html
 
 	echo "" >> $hashage_block.html
 	echo '<body>' >> $hashage_block.html
 
-	menu1
+	echo -e '\t<div class="topnav" id="myTopnav">' >> $hashage_block.html
+        echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hashage_block.html
+        echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hashage_block.html
+        echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hashage_block.html
+        echo -e '\t\t<a href="about.html">About</a>' >> $hashage_block.html
+        echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hashage_block.html
+        echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hashage_block.html
+        echo -e '\t\t</a>' >> $hashage_block.html
+        echo -e '\t</div>' >> $hashage_block.html
 
 	echo "" >> $hashage_block.html
 
@@ -340,12 +348,12 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo -e '\t<h2>Résumé</h2>' >> $hashage_block.html
 	echo "" >> $hashage_block.html
-	echo -e "\t<p>Hashage $hashage</p>" >> $hashage_block.html
+	echo -e "\t<p>Hashage $hashage_block</p>" >> $hashage_block.html
 	echo -e "\t<hr>" >> $hashage_block.html
 
 	echo -e "\t<h2>Détails</h2>" >> $hashage_block.html
 
-	echo -e '\t<p>Hashage<span STYLE="padding:0 0 0 80px;">'$hashage'</p>' >> $hashage_block.html
+	echo -e '\t<p><br>Hashage</br><span STYLE="padding:0 0 0 80px;">'$hashage_block'</p>' >> $hashage_block.html
 	echo -e "\t<hr>" >> $hashage_block.html
 
 	echo -e '\t<p><b>Statut</b> <span STYLE="padding:0 0 0 100px;">'Confirmé'</p>' >> $hashage_block.html
@@ -360,7 +368,7 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo -e '\t<p><b>Poids</b> <span STYLE="padding:0 0 0 103px;">'$poid'</p>' >> $hashage_block.html
 	echo -e "\t<hr>" >> $hashage_block.html
 
-	echo -e '\t<p><b>Confirmations</b> <span STYLE="padding:0 0 0 40px;">'$confirmations'</p>' >> $hashage_block.html
+	echo -e '\t<p><b>Confirmation</b> <span STYLE="padding:0 0 0 40px;">'$mineur'</p>' >> $hashage_block.html
 	echo -e "\t<hr>" >> $hashage_block.html
 
 	echo -e '\t<p><b>Nonce</b> <span STYLE="padding:0 0 0 40px;">'$nonce'</p>' >> $hashage_block.html
@@ -368,7 +376,7 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo "" >> $hashage_block.html
 
-	menu2
+	echo -e '\t<script src="script/menu.js"></script>' >> $hashage_block.html
 
 	echo "</body>" >> $hashage_block.html
 	echo "</html>" >> $hashage_block.html
@@ -396,24 +404,33 @@ echo '<link rel="shortcut icon" type="image/png" href="c-anne_logo.png"/>' >> $h
 echo "" >> $hasgage_block.html
 echo '<title>C-anne Journal</title>' >> $hashage.html
 
-menu3
+echo "" >> $hashage.html
+echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hashage.html
 
 echo "" >> $hashage.html
 echo "<body>" >> $hashage.html
 
-menu4
+echo -e '\t<div class="topnav" id="myTopnav">' >> $hashage.html
+echo -e '\t\t<a href="index.html" class="active">Home</a>' >> $hashage.html
+echo -e '\t\t<a href="all_transactions.html">Transactions</a>' >> $hashage.html
+echo -e '\t\t<a href="all_blocks.html">Blocs</a>' >> $hashage.html
+echo -e '\t\t<a href="about.html">About</a>' >> $hashage.html
+echo -e '\t\t<a href="javascript:void(0);" class="icon" onclick="myFunction()">' >> $hashage.html
+echo -e '\t\t\t<i class="fa fa-bars"></i>' >> $hashage.html
+echo -e '\t\t</a>' >> $hashage.html
+echo -e '\t</div>' >> $hashage.html
 
 echo "" >> $hashage.html
 
-echo -e '<div class="margin">' >> $hasgage_block.html
+echo -e '<div class="margin">' >> $hasgage.html
 
 echo -e "\t<h2>Bloc $number_block_size</h2>" >> $hashage.html
 echo "" >> $hashage.html
 
-echo -e '\t<p>Hashage<span STYLE="padding:0 0 0 140px;">'$hashage'</p>' >> $hashage.html
+echo -e '\t<p><b>Hashage</b> <span STYLE="padding:0 0 0 140px;">'$hashage'</p>' >> $hashage.html
 echo -e "\t<hr>" >> $hashage.html
 
-echo -e '\t<p><b>Confirmations</b> <span STYLE="padding:0 0 0 100px;">'$confirmations'</p>' >> $hashage.html
+echo -e '\t<p><b>Confirmations</b> <span STYLE="padding:0 0 0 100px;">'Confirmé'</p>' >> $hashage.html
 echo -e "\t<hr>" >> $hashage.html
 
 echo -e '\t<p><b>Horodatage (timestramp)</b> <span STYLE="padding:0 0 0 10px;">'$full_date'</p>' >> $hashage.html
@@ -461,7 +478,7 @@ done
 
 echo "" >> $hashage.html
 
-menu5
+echo -e '\t<script src="script/menu.js"></script>' >> $hashage.html
 
 echo "</body>" >> $hashage.html
 echo "</html>" >> $hashage.html
