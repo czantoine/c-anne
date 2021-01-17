@@ -6,8 +6,8 @@ passwordfile=pass
 
 if [ ! -f "ip.txt" ]
 then
-	echo "error file with ip adress"
-	exit 1
+        echo "error file with ip adress"
+        exit 1
 fi
 
 if [ ! -f "server.txt" ]
@@ -24,10 +24,10 @@ number_server=$(wc -l < server.txt)
 
 if [ $number_server -eq $number ]
 then
-        echo ""
+	echo ""
 else
-        echo "error of number server and ip"
-        exit 1
+	echo "error of number server and ip"
+	exit 1
 fi
 
 #split the orign file by the number of server invalible
@@ -57,24 +57,24 @@ done
 
 #Encrypt split files parts
 	#Create a dir with private and public key
-for (i = 0; i < $number; i++); do
-	openssl genrsa -out private_${i}.pem
-	open rsa -in private_${i}.pem -out public_${i}.pem -outform PEM -pubout
-	openssl rsault -encrypt -inkey public_${i}.pem -pubin -in file_${i}.sql -out file_{i}.ssl
+
+cd repo_dechargement
+
+for ((i = 0; i < $number; i++)); do
+	openssl enc -aes-256-cbc -salt -in ${A[i]} -out ${A[i]}.enc -k $passwordfile
 done
 
 #delete original split file part
-for (i = 0; i < $number; i++); do
-	rm file_${i}.sql
+
+for ((i = 0; i < $number; i++)); do
+	rm ${A[i]}
 done
 
 #send files into servers
 
-for (i = 0; i < $number; i++); do
-	j = i+1
-	ip = sed -n "${j} p" ~/ip.txt
-	scp file_{i}.ssl server${j}@${ip}:.
-done
+## log server ##
+
+cd -
 
 #### Block Header Hashing ####
 
@@ -149,7 +149,7 @@ check_nonce()
 create_nonce
 check_nonce
 
-hashage_nonce=$(openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile")
+#hashage_nonce=$(openssl aes-256-cbc -a -salt -in merkle_root$i -out merkle_root$i.enc -pass file:"$passwordfile")
 
 ### Header Hashing END  ###
 
@@ -172,7 +172,7 @@ transaction=$((cptt+=1))
 ## Transaction counter ##
 
 counter_transaction=$((cptt+=1))
-counter_header_transaction=$((cpt+=1)
+counter_header_transaction=$((cpt+=1))
 
 ## Transaction ##
 
@@ -188,7 +188,7 @@ hashage=$number_block_size-$block_header-$counter_header_transaction-$final_tran
 
 ### Others informations ###
 
-mineur=$(hostame)
+mineur=$(hostname)
 
 status=confirmed
 
@@ -240,7 +240,7 @@ menu4(){
 }
 
 menu5(){
-	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage.html	
+	echo -e '\t<script src="script/menu.js"></script>' >> $hasgage.html
 }
 
 ### Menu html END ###
@@ -282,31 +282,29 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	hashage_block=$i-$block_header-$final_transaction
 
-	decimal_number_block_size=$(echo "0.$i+$number_block_size" | bc)
+	decimal_number_block_size=$(echo "$number_block_size.$i" | bc)
 
-	new_block$i=file_transactions.txt$i
-	touch new_block$i
+	new_block=file_block.txt$i
 
-	echo -e '\t\t{' >> $new_block$i
-	echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block$i
-	 >> $new_block$i
-	echo -e '\t\t"block": "'$decimal_number_block_size'"'',' >> $new_block$i
-	echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block$i
-	echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block$i
-	echo -e '\t\t"hauteur": "'$number'"'',' >> $new_block$i
-	echo -e '\t\t"statut": "'$status'"'',' >> $new_block$i
-	echo -e '\t\t"taille": "'$size'"'',' >> $new_block$i
-	echo -e '\t\t"poid": "'$poid'"'',' >> $new_block$i
-	echo -e '\t\t"version": "'$version'"' >> $new_block$i
-	echo -e '\t\t}' >> $new_block$i
+	echo -e '\t\t{' >> $new_block
+	echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block
+	echo -e '\t\t"block": "'$decimal_number_block_size'"'',' >> $new_block
+	echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block
+	echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block
+	echo -e '\t\t"hauteur": "'$number'"'',' >> $new_block
+	echo -e '\t\t"statut": "'$status'"'',' >> $new_block
+	echo -e '\t\t"taille": "'$size'"'',' >> $new_block
+	echo -e '\t\t"poid": "'$poid'"'',' >> $new_block
+	echo -e '\t\t"version": "'$version'"' >> $new_block
+	echo -e '\t\t}' >> $new_block
 
-	add_new_block=$(cat new_block$i)
-	find_line=$(sed -n '/transactions/=' db.json)
+	add_new_block=$(cat $new_block)
+	find_line=$(sed -n '/"transactions"/=' db.json)
 	find_line=$(($find_line+1))
-	new_db=$(awk 'NR=='find_line'{system("cat '$new_block$i' ")} 1' db.json)
+	new_db=$(awk 'NR=='$find_line'{system("cat '$new_block' ")} 1' db.json)
 	echo "$new_db" > db.json
 
-	rm $new_block$i
+	rm $new_block
 
 	### Create html file ###
 
@@ -332,7 +330,7 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo '<body>' >> $hashage_block.html
 
 	menu1
-	
+
 	echo "" >> $hashage_block.html
 
 	echo -e '<div class="margin">' >> $hasgage_block.html
@@ -375,7 +373,7 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo -e '</div>' >> $hasgage_block.html
 
 	### Create Transactions html file END ###
-	
+
 done
 
 ### Added db.json and html blocks file END ###
@@ -453,10 +451,10 @@ echo "" >> $hasgage.html
 n=1
 for (( i = 0 ; i < $number ; i++)); do
 	rep_stock_path=$(sed -n "$n"p stock_path.txt)
-	echo -e '\t<a href="'$rep_stock_path.html'">'$rep_stock_path'</a>' >> hashage.html
-	echo -e "\t<hr>" >> hashage.html
+	echo -e '\t<a href="'$rep_stock_path'">'$rep_stock_path'</a>' >> $hashage.html
+	echo -e "\t<hr>" >> $hashage.html
 	n=$((n+1))
-do
+done
 
 echo "" >> $hashage.html
 
@@ -469,4 +467,4 @@ echo -e '</div>' >> $hasgage.html
 
 rm stock_path.txt
 
-### Create Block file html END ##
+### Create Block file html END ###
