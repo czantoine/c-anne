@@ -256,7 +256,7 @@ echo -e '\t\t{' >> $new_transactions
 echo -e '\t\t"hashage": "'$hashage'"'',' >> $new_transactions
 echo -e '\t\t"hashage_w": "<a href=\"'$hashage'.html\">'$hashage'</a>",' >> $new_transactions
 echo -e '\t\t"block": '$number_block_size''',' >> $new_transactions
-echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_transactions
+echo -e '\t\t"horodatage": "'$full_date'"'',' >> $new_transactions
 echo -e '\t\t"hauteur": '$number''',' >> $new_transactions
 echo -e '\t\t"mineur": "'$mineur'"'',' >> $new_transactions
 echo -e '\t\t"nombre_transactions": '$final_transaction''',' >> $new_transactions
@@ -288,12 +288,12 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo -e '\t\t{' >> $new_block
     echo -e '\t\t"hashage": "'$hashage_block'"'',' >> $new_block
-    echo -e '\t\t"hashage_w": "<a href=\"'$hashage_block'.html\">'$hashage_block'</a>",' >> $new_block
+    echo -e '\t\t"hashatage_w": "<a href=\"'$hashage_block'.html\">'$hashage_block'</a>",' >> $new_block
     echo -e '\t\t"block": '$decimal_number_block_size''',' >> $new_block
     echo -e '\t\t"horodage": "'$full_date'"'',' >> $new_block
     echo -e '\t\t"difficulte": "'$utime1'"'',' >> $new_block
     echo -e '\t\t"hauteur": '$number''',' >> $new_block
-    echo -e '\t\t"hauteur_w": "<a href=\"'$hauteur'.html\">'$hauteur'</a>",' >> $new_block
+    echo -e '\t\t"hauteur_w": "<a href=\"'$hashage_block'.html\">'$number'</a>",' >> $new_block
     echo -e '\t\t"statut": "'$status'"'',' >> $new_block
     echo -e '\t\t"taille": '$size''',' >> $new_block
     echo -e '\t\t"poid": '$poid''',' >> $new_block
