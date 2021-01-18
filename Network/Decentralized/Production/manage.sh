@@ -203,7 +203,7 @@ poid=$((size+size2))
 
 menu0(){
 	echo "" >> $hashage_block.html
-	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage_block.html
+	echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hashage_block.html
 }
 
 menu1(){
@@ -317,17 +317,17 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo -e '<!DOCTYPE html>' >> $hashage_block.html
 	echo -e '<html lang="fr">' >> $hashage_block.html
-	echo "" >> $hasgage_block.html
+	echo "" >> $hashage_block.html
 	echo '<link rel="stylesheet" href="css/style.css">' >> $hashage_block.html
 	echo '<meta name="author" content="czantoine">' >> $hashage_block.html
 	echo '<meta charset="UTF-8">' >> $hashage_block.html
 	echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">' >> $hashage_block.html
-	echo '<link rel="shortcut icon" type="image/png" href="c-anne_logo.png"/>' >> $hasgage_block.html
-	echo "" >> $hasgage_block.html
-	echo '<title>C-anne Journal</title>' >> $hasgage_block.html
+	echo '<link rel="shortcut icon" type="image/png" href="c-anne_logo.png"/>' >> $hashage_block.html
+	echo "" >> $hashage_block.html
+	echo '<title>C-anne Journal</title>' >> $hashage_block.html
 
 	echo "" >> $hashage_block.html
-        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hasgage_block.html
+        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">' >> $hashage_block.html
 
 	echo "" >> $hashage_block.html
 	echo '<body>' >> $hashage_block.html
@@ -344,7 +344,7 @@ for (( i = 0 ; i < $number ; i++)); do
 
 	echo "" >> $hashage_block.html
 
-	echo -e '<div class="margin">' >> $hasgage_block.html
+	echo -e '<div class="margin">' >> $hashage_block.html
 
 	echo -e '\t<h2>Résumé</h2>' >> $hashage_block.html
 	echo "" >> $hashage_block.html
@@ -381,7 +381,7 @@ for (( i = 0 ; i < $number ; i++)); do
 	echo "</body>" >> $hashage_block.html
 	echo "</html>" >> $hashage_block.html
 
-	echo -e '</div>' >> $hasgage_block.html
+	echo -e '</div>' >> $hashage_block.html
 
 	### Create Transactions html file END ###
 
