@@ -15,38 +15,18 @@ final options = [
     subtitle: 'Blabla',
   ),
   Option(
-    icon: Icon(Icons.do_not_disturb, size: 40.0),
-    title: 'Option 2',
+    icon: Icon(Icons.notifications, size: 40.0),
+    title: 'Notifications',
     subtitle: 'Blabla',
   ),
   Option(
-    icon: Icon(Icons.account_circle, size: 40.0),
-    title: 'Option 3',
+    icon: Icon(Icons.help_outline, size: 40.0),
+    title: 'Aide et Commentaires',
     subtitle: 'blabla',
   ),
   Option(
-    icon: Icon(Icons.invert_colors, size: 40.0),
-    title: 'Option 4',
-    subtitle: 'blabla',
-  ),
-  Option(
-    icon: Icon(Icons.watch_later, size: 40.0),
-    title: 'Option 5',
-    subtitle: 'blabla',
-  ),
-  Option(
-    icon: Icon(Icons.fastfood, size: 40.0),
-    title: 'Option 6',
-    subtitle: 'blabla',
-  ),
-  Option(
-    icon: Icon(Icons.local_airport, size: 40.0),
-    title: 'Option 7',
-    subtitle: 'blabla',
-  ),
-  Option(
-    icon: Icon(Icons.settings, size: 40.0),
-    title: 'Option 8',
+    icon: Icon(Icons.info_outline, size: 40.0),
+    title: 'À propos',
     subtitle: 'blabla',
   ),
 ];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:c_app/option_model.dart';
 import 'package:c_app/accueil.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class MenuOptionsScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _MenuOptionsScreenState extends State<MenuOptionsScreen> {
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
-        backgroundColor: Colors.purple,
+        backgroundColor: HexColor('#6C63FF'),
         title: Text('Menu Options'),
         leading: FlatButton(
           textColor: Colors.white,
@@ -61,7 +62,7 @@ class _MenuOptionsScreenState extends State<MenuOptionsScreen> {
                   : null,
             ),
             child: ListTile(
-              leading: options[index - 1].icon,
+              leading: options[index - 1].icon, 
               title: Text(
                 options[index - 1].title,
                 style: TextStyle(
