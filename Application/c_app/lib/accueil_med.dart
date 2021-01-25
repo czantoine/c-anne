@@ -75,7 +75,7 @@ class _SearchBarHomeState extends State<SearchBarHome> {
         stream: (num_secu != "" && num_secu != null)
             ? FirebaseFirestore.instance
             .collection('utilisateurs')
-            .where("num_secu", isGreaterThanOrEqualTo: num_secu)
+            .where("num_secu", isEqualTo: num_secu)
             .snapshots()
             : FirebaseFirestore.instance.collection("utilisateurs").snapshots(),
         builder: (context, snapshot) {
