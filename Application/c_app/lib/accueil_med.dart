@@ -41,7 +41,7 @@ class _SearchBarHomeState extends State<SearchBarHome> {
                     FlatButton(
                       onPressed: () {
                         Navigator.push(context, new MaterialPageRoute(
-                            builder: (context) => MyLoginPage()
+                            builder: (context) => LoginPatient()
                         ));
                       },
                       child: Text('OK',

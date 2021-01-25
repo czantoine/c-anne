@@ -1,4 +1,5 @@
-import 'package:c_app/login_med.dart';
+import 'package:c_app/accueil_med.dart';
+import 'package:c_app/login.dart';
 import 'package:c_app/sign_up_choice.dart';
 import 'package:c_app/sign_up_patient.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +11,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class LoginPatient extends StatefulWidget {
+class LoginMed extends StatefulWidget {
   @override
-  _LoginPatientState createState() => _LoginPatientState();
+  _LoginMedState createState() => _LoginMedState();
 }
 
-class _LoginPatientState extends State<LoginPatient> {
+class _LoginMedState extends State<LoginMed> {
 
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
@@ -78,43 +79,43 @@ class _LoginPatientState extends State<LoginPatient> {
                             decoration: BoxDecoration(
                                 border: Border(
                                     bottom: BorderSide(color: Colors.grey[100]))),
-                              child: TextFormField(
-                                controller: _emailController,
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.only(top :14.0),
-                                    border: InputBorder.none,
-                                    hintText: "Email",
-                                    hintStyle:
-                                    TextStyle(color: Colors.grey[400])),
-                                validator: (text) {
-                                  if (text == null || text.isEmpty) {
-                                    return 'Identifiant non saisie';
-                                  }
-                                  return null;
-                                },
-                              ),
+                            child: TextFormField(
+                              controller: _emailController,
+                              decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(top :14.0),
+                                  border: InputBorder.none,
+                                  hintText: "Email",
+                                  hintStyle:
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text) {
+                                if (text == null || text.isEmpty) {
+                                  return 'Identifiant non saisie';
+                                }
+                                return null;
+                              },
                             ),
+                          ),
                           Container(
                             padding: EdgeInsets.all(8.0),
                             decoration: BoxDecoration(
                                 border: Border(
                                     bottom: BorderSide(color: Colors.grey[100]))),
-                              child: TextFormField(
-                                controller: _passwordController,
-                                decoration: InputDecoration(
-                                    contentPadding: EdgeInsets.only(top :14.0),
-                                    border: InputBorder.none,
-                                    hintText: "Mot de passe",
-                                    hintStyle:
-                                    TextStyle(color: Colors.grey[400])),
-                                validator: (text1) {
-                                  if (text1 == null || text1.isEmpty) {
-                                    return 'Mot de passe non saisie';
-                                  }
-                                  return null;
-                                },
-                                obscureText: true,
-                              ),
+                            child: TextFormField(
+                              controller: _passwordController,
+                              decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.only(top :14.0),
+                                  border: InputBorder.none,
+                                  hintText: "Mot de passe",
+                                  hintStyle:
+                                  TextStyle(color: Colors.grey[400])),
+                              validator: (text1) {
+                                if (text1 == null || text1.isEmpty) {
+                                  return 'Mot de passe non saisie';
+                                }
+                                return null;
+                              },
+                              obscureText: true,
+                            ),
                           ),
                           SizedBox(
                             height: 30,
@@ -125,7 +126,7 @@ class _LoginPatientState extends State<LoginPatient> {
                                   _signInWithEmailAndPassword();
                                   if(_success == true){
                                     Navigator.push(context, new MaterialPageRoute(
-                                        builder: (context) => Accueil_Screen()
+                                        builder: (context) => Accueil_Med_Screen()
                                     ));
                                   }
                                 }
@@ -189,21 +190,21 @@ class _LoginPatientState extends State<LoginPatient> {
                           new InkWell(
                               onTap: () {
                                 Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => LoginMed()
+                                    builder: (context) => LoginPatient()
                                 ));
                               },
                               child:
                               new Container(
                                 height: 40,
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular(10),
                                   border: Border.all(
                                     color: HexColor('#6C63FF'),
                                   ),
-                                  color: Colors.white,
+                                    color: Colors.white,
                                 ),
                                 child: Center(
-                                  child: Text("Vous êtes professionnel de santé ?", style: TextStyle(
+                                  child: Text("Je suis un patient", style: TextStyle(
                                       color: HexColor('#6C63FF'), fontWeight: FontWeight.bold)),
                                 ),
                               )),
@@ -219,7 +220,7 @@ class _LoginPatientState extends State<LoginPatient> {
           ),
         ),
 
-    ),
+      ),
     );
   }
 

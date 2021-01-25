@@ -1,3 +1,4 @@
+import 'package:c_app/login_med.dart';
 import 'package:flutter/material.dart';
 import 'package:c_app/login.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'c-Anne demo',
       debugShowCheckedModeBanner: false,
-      home: Accueil_Med_Screen(),
+      home: LoginMed(),
     );
   }
 }

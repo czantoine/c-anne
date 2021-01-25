@@ -115,7 +115,7 @@ class _SignUpChoicePageState extends State<SignUpChoicePage> {
                         new InkWell(
                             onTap: () {
                               Navigator.push(context, new MaterialPageRoute(
-                                  builder: (context) => MyLoginPage()
+                                  builder: (context) => LoginPatient()
                               ));
                             },
                             child:
