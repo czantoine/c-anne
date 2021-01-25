@@ -198,7 +198,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           Container(
                             margin: EdgeInsets.only(top:20),
                             child: Center(
-                              child: Text("CONTACTE D'URGENCE",
+                              child: Text("CONTACT D'URGENCE",
                                   style: TextStyle(
                                       color: HexColor('#6C63FF'),
                                       fontSize: 30,
