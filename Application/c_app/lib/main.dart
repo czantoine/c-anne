@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:c_app/accueil.dart';
 import 'package:c_app/login.dart';
-import 'package:c_app/sign_up_patient.dart';
-import 'package:c_app/BDD/bdd.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

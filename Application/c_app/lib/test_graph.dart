@@ -1,8 +1,9 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
 import 'package:c_app/menu_options_screen.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+
 
 class Screen3 extends StatefulWidget {
   @override _Screen3State createState() => _Screen3State();}
@@ -62,3 +63,4 @@ class PieData {
   double time;
   PieData(this.activity, this.time);
 }
+*/

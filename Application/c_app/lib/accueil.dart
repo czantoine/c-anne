@@ -17,7 +17,7 @@ class _Accueil_Screen extends State<Accueil_Screen> {
   List<Widget> tabPages = [
     Home(), //screen1
     Profile(), //screen2
-    Screen3(), //screen3
+    //Screen3(), //screen3
     MenuOptionsScreen(), //screen4
   ];
 

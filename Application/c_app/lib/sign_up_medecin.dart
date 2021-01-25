@@ -1,12 +1,9 @@
-import 'package:c_app/BDD/Client_medecin.dart';
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'accueil.dart';
 import 'login.dart';
-import 'package:c_app/BDD/bdd.dart';
 
-import'package:c_app/BDD/bdd.dart';
-import 'package:sqflite/sqflite.dart';
 
 
 
@@ -243,7 +240,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                                     num_rpps: int.parse(rppsController.text)));
                                 */
                                 //dbProvider = DBProvider() as Type;
-
+/*
                                 Client_med rnd = Client_med(
                                     id: 0,
                                     log: logController.text,
@@ -251,10 +248,10 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                                     nom: nomController.text,
                                     prenom: prenomController.text,
                                     num_rpps: int.parse(rppsController.text));
-                                await DBProvider.db.newClient_med(rnd);
+                                //await DBProvider.db.newClient_med(rnd);
                                 setState(() {});
                                 print("client ADD");
-
+*/
 
                                 Navigator.push(context, new MaterialPageRoute(
                                     builder: (context) => Accueil_Screen()
