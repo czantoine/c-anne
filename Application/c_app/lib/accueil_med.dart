@@ -74,8 +74,8 @@ class _SearchBarHomeState extends State<SearchBarHome> {
       body: StreamBuilder<QuerySnapshot>(
         stream: (num_secu != "" && num_secu != null)
             ? FirebaseFirestore.instance
-            .collection('Utilisateurs')
-            .where("numero de securité sociale", arrayContains: num_secu)
+            .collection('utilisateurs')
+            .where("num_secu", isGreaterThanOrEqualTo: num_secu)
             .snapshots()
             : FirebaseFirestore.instance.collection("utilisateurs").snapshots(),
         builder: (context, snapshot) {
@@ -103,6 +103,16 @@ class _SearchBarHomeState extends State<SearchBarHome> {
                     ),
                     Text(
                       data['prenom'],
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    Text(
+                      data['num_secu'],
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 20,
