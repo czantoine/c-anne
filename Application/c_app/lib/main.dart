@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:c_app/login.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:c_app/accueil_med.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'c-Anne demo',
       debugShowCheckedModeBanner: false,
-      home: MyLoginPage(),
+      home: Accueil_Med_Screen(),
     );
   }
 }

@@ -240,7 +240,9 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                                                   child: Text('OK',
                                                     style: TextStyle(
                                                         color: HexColor('#6C63FF')),),
-                                                )]);
+                                                )
+                                              ]
+                                          );
                                         }
                                     );
                                   } on FirebaseAuthException catch (e) {
