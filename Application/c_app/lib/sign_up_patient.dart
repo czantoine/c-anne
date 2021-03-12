@@ -370,7 +370,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           new InkWell(
                               onTap: () {
                                 Navigator.push(context, new MaterialPageRoute(
-                                  builder: (context) => LoginPatient()
+                                  builder: (context) => MyLoginPage()
                                 ));
                               },
                               child:

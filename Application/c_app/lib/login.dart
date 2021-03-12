@@ -1,4 +1,3 @@
-import 'package:c_app/login_med.dart';
 import 'package:c_app/sign_up_choice.dart';
 import 'package:c_app/sign_up_patient.dart';
 import 'package:flutter/material.dart';
@@ -10,12 +9,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class LoginPatient extends StatefulWidget {
+class MyLoginPage extends StatefulWidget {
   @override
-  _LoginPatientState createState() => _LoginPatientState();
+  _MyLoginPageState createState() => _MyLoginPageState();
 }
 
-class _LoginPatientState extends State<LoginPatient> {
+class _MyLoginPageState extends State<MyLoginPage> {
 
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
@@ -182,33 +181,6 @@ class _LoginPatientState extends State<LoginPatient> {
                               },
                               child: new Text("Mot de passe oublié", style: TextStyle(
                                   color: Colors.deepPurple))
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          new InkWell(
-                              onTap: () {
-                                Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => LoginMed()
-                                ));
-                              },
-                              child:
-                              new Container(
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(
-                                    color: HexColor('#6C63FF'),
-                                  ),
-                                  color: Colors.white,
-                                ),
-                                child: Center(
-                                  child: Text("Vous êtes professionnel de santé ?", style: TextStyle(
-                                      color: HexColor('#6C63FF'), fontWeight: FontWeight.bold)),
-                                ),
-                              )),
-                          SizedBox(
-                            height: 30,
                           ),
                         ],
                       ),

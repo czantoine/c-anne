@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'login_med.dart';
+import 'accueil.dart';
+import 'login.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 
 
 class MedecinSignUpPage extends StatefulWidget {
@@ -275,7 +278,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                           new InkWell(
                               onTap: () {
                                 Navigator.push(context, new MaterialPageRoute(
-                                    builder: (context) => LoginMed()
+                                    builder: (context) => MyLoginPage()
                                 ));
                               },
                               child:
