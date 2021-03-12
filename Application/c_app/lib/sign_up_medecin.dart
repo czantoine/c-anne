@@ -61,7 +61,7 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
     }
 
     return Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: ListView(
           children: <Widget>[

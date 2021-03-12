@@ -1,3 +1,4 @@
+import 'package:c_app/Graph.dart';
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
 import 'package:c_app/menu_options_screen.dart';
@@ -17,7 +18,6 @@ class _Accueil_Screen extends State<Accueil_Screen> {
   List<Widget> tabPages = [
     Home(), //screen1
     Profile(), //screen2
-    //Screen3(), //screen3
     MenuOptionsScreen(), //screen4
   ];
 
@@ -42,8 +42,7 @@ class _Accueil_Screen extends State<Accueil_Screen> {
         backgroundColor: Colors.white,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem( icon: Icon(Icons.home), title: Text("Home")),
-          BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Profile")),
-          BottomNavigationBarItem(icon: Icon(Icons.assessment), title: Text("Santé")),
+          BottomNavigationBarItem(icon: Icon(Icons.assessment), title: Text("Graph")),
           BottomNavigationBarItem(icon: Icon(Icons.settings), title: Text("Options")),
         ],
         selectedItemColor: HexColor('#6C63FF'),

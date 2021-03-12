@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'c-Anne demo',
       debugShowCheckedModeBanner: false,
-      home: Accueil_Med_Screen(),
+      home: MyLoginPage(),
     );
   }
 }

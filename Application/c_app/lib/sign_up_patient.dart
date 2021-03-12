@@ -56,7 +56,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
     }
 
     return Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: ListView(
           children: <Widget>[

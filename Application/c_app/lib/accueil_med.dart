@@ -48,7 +48,7 @@ class _SearchBarHomeState extends State<SearchBarHome> {
                         style: TextStyle(
                             color: HexColor('#6C63FF')),),
                     ),
-                    FlatButton(
+                    TextButton(
                       onPressed: () { Navigator.pop(context); },
                       child: Text('Annuler',
                         style: TextStyle(
