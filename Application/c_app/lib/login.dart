@@ -126,7 +126,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                                   _signInWithEmailAndPassword();
                                   if(_success == true){
                                     Navigator.push(context, new MaterialPageRoute(
-                                        builder: (context) => SearchBarHome()
+                                        builder: (context) => Accueil_Screen()
                                     ));
                                   }
                                 }
