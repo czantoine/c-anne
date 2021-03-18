@@ -217,13 +217,14 @@ class _MedecinSignUpPageState extends State<MedecinSignUpPage> {
                                   try {
                                     UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: mdp);
 
-                                    FirebaseFirestore.instance.collection("Personnel Médical").add(
+                                    FirebaseFirestore.instance.collection("utilisateurs").add(
                                         {
                                           "email" : email,
                                           "mdp" : mdp,
                                           "nom" : nom,
                                           "prenom" : prenom,
-                                          "numero de securité sociale" : num_RPPS
+                                          "numero RPPS" : num_RPPS,
+                                          "med": 1
                                         }
                                     ).then((value) {
                                       print(value.id);

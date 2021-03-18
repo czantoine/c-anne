@@ -1,11 +1,13 @@
 import 'package:c_app/sign_up_choice.dart';
 import 'package:c_app/sign_up_patient.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:c_app/accueil_model.dart';
 import 'package:c_app/menu_options_screen.dart';
 import 'accueil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'accueil_med.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -124,7 +126,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
                                   _signInWithEmailAndPassword();
                                   if(_success == true){
                                     Navigator.push(context, new MaterialPageRoute(
-                                        builder: (context) => Accueil_Screen()
+                                        builder: (context) => SearchBarHome()
                                     ));
                                   }
                                 }
@@ -205,6 +207,18 @@ class _MyLoginPageState extends State<MyLoginPage> {
       setState(() {
         _success = true;
         _userEmail = user.email;
+/*
+       UserType().getUserType(_emailController.text,_passwordController.text).then((querySnapshot) => {
+       querySnapshot.forEach((doc) => {
+       // doc.data() is never undefined for query doc snapshots
+       console.log(doc.id, " => ", doc.data());
+       });
+       })
+            .catch((error) => {
+        console.log("Error getting documents: ", error);
+        });
+
+*/
       });
     } else {
       setState(() {
@@ -212,6 +226,35 @@ class _MyLoginPageState extends State<MyLoginPage> {
       });
     }
   }
-
 }
 
+class UserType {
+  getUserType( String Email, String Mdp) {
+    return FirebaseFirestore.instance
+        .collection('utilisateurs')
+        .where('email', isEqualTo: Email)
+        .where('mdp', isEqualTo: Mdp )
+        .get();
+  }
+}
+/*
+class User {
+  constructor ( email, mdp, med) {
+    this.email = email;
+    this.mdp = mdp;
+    this.med = med;
+  }
+
+  set email(email) {}
+  set mdp(mdp) {}
+  set med(med) {}
+}
+*/
+/*
+// Firestore data converter
+fromFirestore: function(snapshot, options){
+  const data = snapshot.data(options);
+  return new City(data.name, data.state, data.country);
+}
+};
+*/

@@ -317,7 +317,8 @@ class _MySignUpPageState extends State<MySignUpPage> {
                                           "nom_urgence2" : nom_urgence2,
                                           "num_urgence2" : num_urgence2,
                                           "nom_urgence3" : nom_urgence3,
-                                          "num_urgence3" : num_urgence3
+                                          "num_urgence3" : num_urgence3,
+                                          "med": 0
                                         }
                                     ).then((value) {
                                       print(value.id);
